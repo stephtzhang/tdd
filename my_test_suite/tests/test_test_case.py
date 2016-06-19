@@ -2,12 +2,7 @@
 # ----
 # make TestSuite from a TestCase class
 # catch and report setUp errors
-# call tests from script in my_test_suite and nix importing hack
-
-# hack to add parent dir to python's search path
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.dirname(__file__) + '/../..'))
+# call tests from script in my_test_suite
 
 from my_test_suite.test_case import WasRun, TestCase, TestResult, TestSuite
 
