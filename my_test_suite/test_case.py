@@ -2,15 +2,21 @@ class TestResult(object):
     def __init__(self):
         self.runCount = 0
         self.errorCount = 0
+        self.setUpErrorCount = 0
 
     def summary(self):
-        return "{} run, {} failed".format(self.runCount, self.errorCount)
+        return "{} run, {} failed, {} setups failed".format(self.runCount,
+                                                            self.errorCount,
+                                                            self.setUpErrorCount)
 
     def testStarted(self):
         self.runCount += 1
 
     def testFailed(self):
         self.errorCount += 1
+
+    def setUpFailed(self):
+        self.setUpErrorCount += 1
 
 
 class TestSuite(object):
@@ -31,7 +37,10 @@ class TestCase(object):
 
     def run(self, result):
         result.testStarted()
-        self.setUp()
+        try:
+            self.setUp()
+        except Exception as e:
+            result.setUpFailed()
         try:
             method = getattr(self, self.name)
             method()
