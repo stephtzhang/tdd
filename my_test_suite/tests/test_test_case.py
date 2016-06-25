@@ -1,8 +1,3 @@
-# TODO
-# ----
-# make TestSuite from a TestCase class
-# catch and report setUp errors
-
 from my_test_suite.test_case import WasRun, TestCase, TestResult, TestSuite
 
 class TestTestCase(TestCase):
