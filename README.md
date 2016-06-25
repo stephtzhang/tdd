@@ -2,6 +2,6 @@
 Reference code for _TDD by Example_, Section II
 
 ### To run tests
-`cd tdd`
+`cd my_test_suite`
 
-`python -m my_test_suite.tests.test_test_case`
+`./scripts/test`

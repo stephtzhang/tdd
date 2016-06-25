@@ -2,7 +2,6 @@
 # ----
 # make TestSuite from a TestCase class
 # catch and report setUp errors
-# call tests from script in my_test_suite
 
 from my_test_suite.test_case import WasRun, TestCase, TestResult, TestSuite
 
