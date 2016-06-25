@@ -1,3 +1,0 @@
-#!/usr/bin/env bash
-
-cd .. && python -m my_test_suite.tests.test_test_case

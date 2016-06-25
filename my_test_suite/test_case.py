@@ -1,4 +1,4 @@
-class TestResult:
+class TestResult(object):
     def __init__(self):
         self.runCount = 0
         self.errorCount = 0
@@ -13,7 +13,7 @@ class TestResult:
         self.errorCount += 1
 
 
-class TestSuite:
+class TestSuite(object):
     def __init__(self):
         self.tests = []
 
@@ -25,7 +25,7 @@ class TestSuite:
             test.run(result)
 
 
-class TestCase:
+class TestCase(object):
     def __init__(self, name):
         self.name = name
 
